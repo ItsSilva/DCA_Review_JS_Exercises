@@ -48,13 +48,15 @@ const tasks = [
     {
         id: 3,
         description: 'Go to the gym',
-        status: 'completed'
+        status: 'pending'
     }
 ]
 const tasksStatus = (tasks) => {
     let newArrayTasks = [];
     tasks.forEach(task => {
-        if (task.status === 'completed' && task.id % 2 !== 0) newArrayTasks.push(task);
+        if (task.id % 2 !== 0) 
+            task.status = 'completed';
+            newArrayTasks.push(task);
     })
     return newArrayTasks;
 }
@@ -117,3 +119,87 @@ const tasksByIdUnique = (tasksById) => {
     return uniqueIds;
 }
 console.log(tasksByIdUnique(tasksById));
+
+// 5.
+const studentsEvaluation = [
+    {
+        name: 'John',
+        grade: 7
+    },
+    {
+        name: 'Jenny',
+        grade: 5
+    },
+    {
+        name: 'Peter',
+        grade: 4
+    },
+    {
+        name: 'Sophie',
+        grade: 9
+    }
+]
+const medianGrade = (studentsEvaluation) => {
+    let newArrayStudents = 0;
+    studentsEvaluation.forEach(elements => {
+        newArrayStudents += elements.grade / studentsEvaluation.length;
+    })
+    return newArrayStudents;
+}
+console.log(medianGrade(studentsEvaluation));
+
+// 6. 
+const fruits = [
+    {
+        name: 'Apple',
+    },
+    {
+        name: 'Banana',
+    },
+    {
+        name: 'Orange',
+    },
+    {
+        name: 'Apple',
+    }
+]
+const fruitsRepeated = (fruits) => {
+    let fruitsCount = 0;
+    fruits.forEach(fruit => {
+        if(fruit.name === 'Apple'){
+            fruitsCount++;
+        }
+    })
+    return fruitsCount;
+};
+console.log(fruitsRepeated(fruits));
+
+// 7.
+const transactions = [
+    {
+        category: 'Groceries',
+        amount: 50
+    },
+    {
+        category: 'Transport',
+        amount: 30
+    },
+    {
+        category: 'Groceries',
+        amount: 20
+    },
+    {
+        category: 'Transport',
+        amount: 10
+    }
+]
+const transactionsTotal = (transactions) => {
+    let total = 0;
+    transactions.forEach(transaction => {
+        if(transaction.category === 'Groceries'){
+            total = total + transaction.amount; // total += transaction.amount;
+        }
+    })
+    return total;
+}
+console.log(transactionsTotal(transactions));
