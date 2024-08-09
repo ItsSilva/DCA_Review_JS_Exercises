@@ -203,3 +203,336 @@ const transactionsTotal = (transactions) => {
     return total;
 }
 console.log(transactionsTotal(transactions));
+
+// 8.
+const people = [
+    {
+        name: 'John',
+        age: 30
+    },
+    {
+        name: 'Jenny',
+        age: 25
+    },
+    {
+        name: 'Peter',
+        age: 17
+    },
+    {
+        name: 'Sophie',
+        age: 35
+    }
+]
+const peopleLegalAge = (people) =>{
+     people.forEach(e => {
+        if(e.age >= 18){
+            e.legalAge = true;
+        } else {
+            e.legalAge = false;
+        }
+     })
+     return people;
+}
+console.log(peopleLegalAge(people));
+
+//9.
+const booksByAuthors = [
+    {
+        tittle: 'Harry Potter and the Philosopher\'s Stone',
+        author: 'J.K. Rowling',
+    },
+    {
+        tittle: 'The Lord of the Rings',
+        author: 'J.R.R. Tolkien',
+    },
+]
+const booksAndAuthor = (booksByAuthors) => {
+    let newArrayBooks = [];
+    booksByAuthors.forEach(e => {
+        newArrayBooks.push(e.tittle + ' - ' + e.author);
+    })
+    return newArrayBooks;
+};
+console.log(booksAndAuthor(booksByAuthors));
+
+//10.
+const objects = [
+    {
+        name: 'Juan',
+        salary: 4.800,
+        department: 'DEV'
+    },
+    {
+        name: 'Maria',
+        salary: 2.400,
+        department: 'UX/UI'
+    },
+    {
+        name: 'Jean',
+        salary: 2.400,
+        department: 'photographer'
+    }
+] 
+const pullObjects = (objects) => {
+    let newArray = []
+    objects.forEach(e => {
+        if(e.department){
+           delete e.department
+        }
+    newArray.push(e);
+   });
+   return  newArray;
+};
+console.log(pullObjects(objects));
+
+//11.
+const books1 = [
+    {
+        tittle: 'Harry Potter and the Philosopher\'s Stone',
+        author: 'J.K. Rowling',
+        year: 1997,
+        pages: 223
+    },
+    {
+        tittle: 'The Lord of the Rings',
+        author: 'J.R.R. Tolkien',
+        year: 1954,
+        pages: 1178
+    },
+    {
+        tittle: 'Atonement',
+        author: 'Ian McEwan',
+        year: 2001,
+        pages: 435
+    }
+]
+const specificAuthorAndYear = (books1) => {
+    let newArray = []
+    books1.forEach(e => {
+        if(e.year < 1990 && e.author === 'J.R.R. Tolkien'){
+            newArray.push(e);
+        };
+    });
+    return newArray;
+};
+console.log(specificAuthorAndYear(books1));
+
+//12.
+const peopleSumAge = [
+    {
+        name: 'Juan',
+        age: 18
+    },
+    {
+        name: 'Maria',
+        age: 20
+    },
+    {
+        name: 'Pablo',
+        age: 10
+    }
+]
+const sumAge = (peopleSumAge) => {
+    let totalAge = 0
+    peopleSumAge.forEach(e => {
+        totalAge = totalAge + e.age
+    })
+    return totalAge
+}
+console.log(sumAge(peopleSumAge));
+
+// 13.
+const books2 = [
+    {
+        tittle: 'Harry Potter and the Philosopher\'s Stone',
+        author: 'J.K. Rowling',
+        year: 1997,
+        pages: 223
+    },
+    {
+        tittle: 'The Lord of the Rings',
+        author: 'J.R.R. Tolkien',
+        year: 1954,
+        pages: 1178
+    },
+    {
+        tittle: 'Atonement',
+        author: 'Ian McEwan',
+        year: 2001,
+        pages: 435
+    }
+]
+const filterBooks = (books2) => {
+    let newArray = [];
+    books2.forEach(e => {
+        if(e.year > 2000 && e.pages > 300){
+            newArray.push(e);
+        };
+        // if(e.year > 2000 && e.pages > 300) newArray.push(e);
+    });
+    return newArray;
+};
+console.log(filterBooks(books2));
+
+// 14. 
+const people1 = [
+    {
+        name: 'Juan',
+        age: 18
+    },
+    {
+        name: 'Laura',
+        age: 30
+    },
+    {
+        name: 'Miguel',
+        age: 22
+    }
+]
+const peopleOver18 = (people1) => {
+    let total = 0;
+    people1.forEach(e => {
+        if(e.age > 18){
+            total += 1
+        }
+    });
+    return total;
+};
+console.log(peopleOver18(people1));
+
+// 15.
+const students = [
+    {
+        name: 'Juan',
+        grade: 100
+    },
+    {
+        name: 'Laura',
+        grade: 60
+    },
+    {
+        name: 'Sara',
+        grade: 30
+    }
+]
+const studentsExtraValue = (student) => {
+        student.forEach(e => {
+            if(e.grade >= 60 ){
+              e.approved = true
+            } else {
+                e.approved = false
+            };
+        })
+        return student
+}
+console.log(studentsExtraValue(students))
+
+// 16. 
+const vegetables = [
+    {
+        name: 'broccoli',
+        price: 25
+    },
+    {
+        name: 'tomato',
+        price: 15
+    },
+    {
+        name: 'carrot',
+        price: 20
+    }
+]
+const maximumProperty = (vegetable) => {
+    let newArray = vegetables[0];
+    vegetable.forEach(e => {
+        if (e.price > newArray.price){
+            newArray = e;
+        };
+    });
+    return newArray;
+};
+console.log(maximumProperty(vegetables));
+
+// 17.
+const students1 = [
+    {
+        name: 'Juan',
+        age: 18
+    },
+    {
+        name: 'Laura',
+        age: 30
+    },
+    {
+        name: 'Miguel',
+        age: 22
+    }
+];
+const deleteProperty = (student) => {
+    student.forEach(e => {
+        delete e.age;
+    });
+    return student;
+};
+console.log(deleteProperty(students1));
+
+// 18.
+const employees = [
+    {
+        name: 'Juan',
+        age: 18,
+        department: 'sales'
+    },
+    {
+        name: 'Laura',
+        age: 30,
+        department: 'design'
+    },
+    {
+        name: 'Miguel',
+        age: 22,
+        department: 'sales'
+    }
+];
+const filterEmployees = (employee) => {
+    let newArray = []
+    employee.forEach(e => {
+        if(e.department === 'sales'){
+            newArray.push(e)
+        };
+    });
+    return newArray;
+};
+console.log(filterEmployees(employees));
+
+// 19.
+const objects1 = [
+    {
+        product: 'pants',
+        amount: 5
+    },
+    {
+        product: 'shoes',
+        amount: 8
+    },
+    {
+        product: 'pants',
+        amount: 5
+    },
+    {
+        product: 'pants',
+        amount: 5
+    },
+]
+const countingElements = (object) => {
+    let newObject = {}
+    object.forEach(e => {
+        if(newObject[e.product]){
+            newObject[e.product] += e.amount
+        } else {
+            newObject[e.product] = e.amount
+        };
+    });
+    return newObject;
+};
+console.log(countingElements(objects1));
