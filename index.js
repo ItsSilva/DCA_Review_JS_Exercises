@@ -536,3 +536,136 @@ const countingElements = (object) => {
     return newObject;
 };
 console.log(countingElements(objects1));
+
+// 20.
+const people2 = [
+    {
+        name: 'Juan',
+        age: 18
+    },
+    {
+        name: 'Nick',
+        age: 17
+    },
+    {
+        name: 'David',
+        age: 20
+    }
+];
+const peopleTotalAge = (ages) => {
+    let totalAges = 0;
+    ages.forEach(age => {
+        if(age.age) {
+            totalAges += age.age 
+        };
+    });
+    return totalAges;
+};
+console.log(peopleTotalAge(people2));
+
+// 21.
+const products1 = [
+    {
+        name: 'Phone',
+        price: 250
+    },
+    {
+        name: 'Mouse',
+        price: 50
+    },
+    {
+        name: 'Laptop',
+        price: 1500
+    }
+]
+const myFunction = (products) => {
+    let newArray = [];
+    products.forEach(product => {
+        if(product.price > 50){
+            newArray.push(product)
+        };
+    });
+    return newArray;
+};
+console.log(myFunction(products1));
+
+// 22.
+const objectProperty = [
+    {
+        name: 'Juan',
+        grade: 5
+    },
+    {
+        name: 'Nick',
+        grade: 3
+    },
+    {
+        name: 'Pablo',
+        grade: 4
+    }
+];
+const finedObjectsByProperty = (objects) => {
+    let newArray = [];
+    objects.forEach(object => {
+        if(object.name === 'Juan'){
+            newArray.push(object);
+        } else {
+            newArray.push(null);
+        };
+    });
+    return newArray;
+};
+console.log(finedObjectsByProperty(objectProperty));
+
+// 23.
+const products2 = [
+    {
+        name: 'Phone',
+        price: 250
+    },
+    {
+        name: 'Mouse',
+        price: 50
+    },
+    {
+        name: 'Laptop',
+        price: 1500
+    }
+];
+const lessToHighPrice = (products) => {
+    products.sort((a, b) => a.price - b.price);
+    return products;
+};
+console.log(lessToHighPrice(products2));
+
+// 24.
+const people3 = [
+    {
+        name: 'Juan',
+        age: 18
+    },
+    {
+        name: 'Nick',
+        age: 17
+    },
+    {
+        name: 'David',
+        age: 20
+    }
+];
+const people4 = [
+    {
+        name: 'Juan',
+        age: 18
+    },
+    {
+        name: 'Nick',
+        age: 17
+    },
+    {
+        name: 'David',
+        age: 20
+    }
+];
+const newArray = people3.concat(people4);
+console.log(newArray);
